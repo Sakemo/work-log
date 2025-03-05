@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code Tracking - Auto-log Extension</title>
+  
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/1f26dd467f.js" crossorigin="anonymous"></script>
+
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <i class="fas fa-rocket"></i> Code Tracking
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#hero" class="active" data-i18n="navHome"><i class="fas fa-home"></i> Início</a></li>
+          <li><a href="#features" data-i18n="navFeatures"><i class="fas fa-cogs"></i> Recursos</a></li>
+          <li><a href="#pricing" data-i18n="navPricing"><i class="fas fa-tags"></i> Preços</a></li>
+          <li><a href="#testimonials" data-i18n="navTestimonials"><i class="fas fa-comments"></i> Depoimentos</a></li>
+          <li><a href="#contact" data-i18n="navContact"><i class="fas fa-envelope"></i> Contato</a></li>
+        </ul>
+      </nav>
+      <div class="language-switcher">
+        <select id="languageSelect">
+          <option value="pt" selected>PT</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Seção Hero -->
+  <section id="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-bg-glow-2"></div>
+    <div class="container hero-container">
+      <div class="hero-text">
+        <h1 data-i18n="heroTitle">Mantenha seu GitHub sempre em atividade</h1>
+        <p data-i18n="heroSubtitle">
+          Transforme seus commits em um diário de progresso. Nunca mais fique com o perfil vazio!
+        </p>
+        <a href="#pricing" class="cta-btn" data-i18n="ctaSubscribe">
+          <i class="fas fa-rocket"></i> Assine Agora
+        </a>
+      </div>
+      <div class="hero-media">
+        <img src="assets/hero-bg.jpg" alt="Preview Code Tracking" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Trust Brands -->
+  <section class="trust-brands">
+    <div class="container">
+      <p class="trust-text">
+        <i class="fas fa-shield-alt"></i>
+        <span data-i18n="trustedBy">Confiado por desenvolvedores e entusiastas ao redor do mundo</span>
+      </p>
+      <div class="brands-logos">
+        <img src="assets/brand1.png" alt="Brand 1" />
+        <img src="assets/brand2.png" alt="Brand 2" />
+        <img src="assets/brand3.png" alt="Brand 3" />
+        <img src="assets/brand4.png" alt="Brand 4" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Features -->
+  <section id="features">
+    <div class="container features-container">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-clock"></i></div>
+        <h2 data-i18n="feature1Title">Auto Commit Programado</h2>
+        <p data-i18n="feature1Desc">Mantenha seu calendário de commits sempre ativo sem esforço.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-book"></i></div>
+        <h2 data-i18n="feature2Title">Diário de Progresso</h2>
+        <p data-i18n="feature2Desc">Documente cada etapa do seu trabalho automaticamente.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fab fa-github"></i></div>
+        <h2 data-i18n="feature3Title">Integração com GitHub</h2>
+        <p data-i18n="feature3Desc">Crie e atualize repositórios facilmente com apenas um clique.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Pricing (planos carregados dinamicamente) -->
+  <section id="pricing">
+    <div class="container pricing-container">
+      <h2 data-i18n="pricingTitle">Planos e Preços</h2>
+      <div id="pricingCards" class="pricing-cards"></div>
+      <div class="payment-methods">
+        <p data-i18n="paymentMethods"><i class="fas fa-credit-card"></i> Aceitamos Cartão de Crédito e Pix</p>
+      </div>
+    </div>
+  </section>
+<!-- Seção Comparison: Funcionalidades Free vs PRO -->
+<section id="comparison">
+  <div class="container comparison-container">
+    <h2>Funcionalidades: Free vs PRO</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Funcionalidade</th>
+          <th>Free</th>
+          <th>PRO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Login com OAuth do GitHub</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Commit automático a cada 60 minutos</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Personalização do intervalo de tempo entre Commits</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+
+        <tr>
+          <td>Proteção contra branch errado</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Commit com mensagem automática (baseada em IA)</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Histórico completo dos commits (log detalhado)</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Commits em múltiplos repositórios ao mesmo tempo</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Dashboard de estatísticas sobre commits</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Notificação de erro em commits</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Tema customizável para a extensão</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Exportação de logs para CSV</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+  <!-- Seção Testimonials -->
+  <section id="testimonials">
+    <div class="container testimonials-container">
+      <h2 data-i18n="testimonialsTitle">Depoimentos</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <p>"A Code Tracking mudou a forma como eu mantenho meu GitHub ativo. Simples e eficiente!"</p>
+          <span><i class="fas fa-user"></i> - João Silva</span>
+        </div>
+        <div class="testimonial-card">
+          <p>"Now my GitHub profile looks alive and active even during my deep focus sessions."</p>
+          <span><i class="fas fa-user"></i> - Emily Johnson</span>
+        </div>
+        <div class="testimonial-card">
+          <p>"Uma solução inovadora para dar aquele upgrade no meu portfólio de desenvolvedor."</p>
+          <span><i class="fas fa-user"></i> - Pedro Santos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Benefits -->
+  <section id="benefits">
+    <div class="container benefits-container">
+      <h2 data-i18n="benefitsTitle">Por que escolher a Code Tracking?</h2>
+      <ul>
+        <li data-i18n="benefit1"><i class="fas fa-robot"></i> Automação inteligente de commits</li>
+        <li data-i18n="benefit2"><i class="fas fa-book-open"></i> Diário digital completo de suas atividades</li>
+        <li data-i18n="benefit3"><i class="fas fa-code"></i> Interface inspirada no VS Code e no estilo cyberpunk</li>
+        <li data-i18n="benefit4"><i class="fas fa-plug"></i> Integração simples com o GitHub</li>
+        <li data-i18n="benefit5"><i class="fas fa-headset"></i> Suporte dedicado e atualizações constantes</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Seção Contact -->
+  <section id="contact">
+    <div class="container contact-container">
+      <h2 data-i18n="contactTitle">Entre em Contato</h2>
+      <form id="subscribeForm">
+        <input type="email" placeholder="Seu email" required data-i18n-placeholder="emailPlaceholder" />
+        <button type="submit" data-i18n="contactSubmit">
+          <i class="fas fa-paper-plane"></i> Enviar
+        </button>
+      </form>
+      <p data-i18n="contactInfo">
+        <i class="fas fa-envelope"></i> Tem alguma dúvida? Fale conosco: sketlen308@gmail.com
+      </p>
+      <div class="contact-buttons">
+        <a href="https://github.com/Sakemo" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="mailto:sketlen308@gmail.com"><i class="fas fa-envelope"></i> E-mail</a>
+        <a href="tel:+5588981346909"><i class="fas fa-phone"></i> Telefone</a>
+        <a href="https://discord.com" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+      
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé com contatos -->
+  <footer>
+    <div class="container footer-container">
+      <p>
+        &copy; 2025 Code Tracking <i class="fas fa-shield-alt"></i>. Todos os direitos reservados.
+      </p>
+
+      </div>
+  </footer>
+
+  <!-- Botão Scroll to Top -->
+  <button id="scrollToTopBtn" class="scroll-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
